@@ -1,0 +1,271 @@
+@keyframes loadPage {
+    0% {
+        transform: translateY(-100%);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+
+@keyframes loadPage2 {
+    0% {
+        transform: translateY(+100%);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+
+@keyframes loadUserInfo {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+* {
+    font-family: arial;
+}
+
+#warning {
+    background-color: rgba(255, 255, 77, .6);
+    font-size: 1.2em;
+}
+
+.login_wraper {
+    margin-top: 5em;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.login_form, .userInfo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-items: center;
+    width: 100%;
+    transition: 300ms;
+}
+
+.login_form:nth-child(1) {
+    border-right: .1em solid black;
+}
+
+.login_form:nth-child(2) {
+    border-left: .1em solid black;
+}
+
+.login_form *, .userInfo * {
+    width: 60%;
+    margin-bottom: 0.5em;
+    text-align: center;
+    padding: .5em;
+    background-color: rgba(100, 149, 237, .1);
+    margin-bottom: .5em;
+    border: none;
+}
+
+.userInfo {
+    border: none;
+    transition: 200ms;
+    animation: 300ms ease 0s 1 loadUserInfo;
+}
+
+.switchSignIn_Up {
+    width: 15%;
+    margin-top: 1em;
+}
+
+input::placeholder {
+    text-align: center;
+}
+
+.changeInfo {
+    display: flex;
+    transition: 400ms;
+    animation: 1s ease 0s 1 loadPage;
+}
+
+.purchasesInfo {
+    flex: 4;
+    display: flex;
+    color: rgb(54, 54, 54);
+    margin-bottom: 2em;
+    transition: 400ms;
+    flex-direction: column;
+    text-align: center;
+}
+
+.personalInfoForm {
+    flex: 4;
+    display: none;
+    transition: 400ms;
+    text-align: center;
+    justify-content: center;
+}
+
+.personalInfoInput {
+    text-align: center;
+}
+
+.purchasesTable {
+    margin-bottom: 1em;
+    text-align: center;
+    animation: 1s ease 0s 1 loadPage2;
+}
+
+.purchasesTable * {
+    padding: 0.5em;
+    padding-right: 1em;
+}
+
+td img {
+    width: 4em;
+}
+
+.purchasesTable tr {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.purchasesTable td {
+    flex: 1;
+}
+
+.purchasesTable th {
+    flex: 1;
+}
+
+.purchasesTable td:nth-child(1) {
+    background-color: rgb(255, 255, 77);
+}
+
+.purchasesTable td:nth-child(3) {
+    background-color: rgb(255, 255, 77);
+}
+
+.purchasesTable td:nth-child(2) {
+    font-style: italic;
+}
+
+.purchasesTable tbody tr:last-child {
+    font-weight: bold;
+}
+
+.switchSignIn_Up {
+    background-color: white;
+    background-color: rgb(255, 255, 77);
+    transition: 200ms;
+    width: auto;
+    padding: .5em;
+}
+
+.switchSignIn_Up:hover {
+    background-color: rgba(255, 255, 77, .6);
+}
+
+#sidemenu {
+    flex: 1;
+    display: flex;
+    align-self: start;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    z-index: 22;
+    position: sticky;
+    top: 0;
+    height: 100vh;
+}
+
+#sidemenu ul {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    padding: 0;
+}
+
+#sidemenu ul li {
+    display: flex;
+    flex: 1;
+    list-style: none;
+    margin-bottom: .2em;
+    padding: 0;
+}
+
+.sidemenuChoice {
+    width: 100%;
+    color: white
+    transition: bottom 300ms ease-in;
+    border: none;
+    padding: 1.5em 0;
+    font-size: 1em;
+    margin-left: .8em;
+    background-color: rgba(100, 149, 237, 1);
+    background-size: 50%;
+    background-position: center;
+}
+
+.sidemenuChoice:hover{
+    cursor: pointer;
+    background-color: rgba(100, 149, 237, .8);
+    color: white;
+}
+
+.logoutBtn a {
+    width: 100%;
+}
+
+/* adminPage */
+#allProducts tbody:nth-child(2) {
+    background-color: rgb(255, 255, 77);
+}
+
+
+#editProducts {
+    flex: 4;
+    display: flex;
+}
+
+#allProducts {
+    display: flex;
+    flex: 1;
+    margin: 0 0 1em 1em;
+    text-align: center;
+    animation: 1s ease 0s 1 loadPage2;
+    flex-flow: column;
+}
+
+#allProducts * {
+    padding: 0.5em;
+    padding-right: 1em;
+}
+
+td img {
+    width: 4em;
+}
+
+#allProducts tr {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+#allProducts td {
+    flex: 1;
+}
+
+#allProducts th {
+    flex: 1;
+}
+
+#allProducts td:nth-child(1) {
+    font-style: italic;
+}
+
+#allProducts tbody tr:last-child {
+    display: none;
+    transition: 200ms;
+}

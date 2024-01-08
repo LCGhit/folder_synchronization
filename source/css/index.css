@@ -1,0 +1,384 @@
+* {
+    font-family: arial;
+    scroll-behavior: smooth;
+}
+
+@keyframes loadPage {
+    0% {
+        transform: translateX(-100%);
+    }
+    100% {
+        transform: translateX(0);
+    }
+}
+
+header {
+    display: flex;
+    justify-content: center;
+}
+
+.banner {
+    width: 80%;
+    height: 15em;
+    object-fit: cover;
+    object-position: 0% 45%;
+    margin-bottom: 2em;
+}
+
+aside {
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+}
+
+#warning {
+    background-color: rgba(255, 255, 77, .6);
+    font-size: 1.2em;
+}
+
+article {
+    animation: 2s ease 0s 1 loadPage;
+}
+
+@font-face {
+    font-family: menuFont;
+    src: url(fonts/vonique.otf);
+}
+
+[type=submit]:hover {
+    cursor: pointer;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+nav {
+    position: sticky;
+    top: 0;
+    display: flex;
+    align-items: center;
+    margin: 2em 0 2em 0;
+    z-index: 21;
+    transition: 250ms;
+    background-color: rgba(255, 255, 255, .8);
+    height: 4em;
+}
+
+.nav-logo {
+    flex: 1;
+    height: 8em;
+    width: auto;
+    background-image: url(../pictures/dudi_icon_02.jpg);
+    background-size: contain;
+    background-repeat: no-repeat;
+    transition: 200ms;
+}
+
+.nav-logo img {
+    width: 15em;
+    height: auto;
+    transition: 250ms;
+}
+
+.nav-list {
+    display: flex;
+    flex: 1;
+    flex-direction: row;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-list:nth-child(2) a {
+    font-family: menuFont;
+}
+
+.nav-item {
+    display: flex;
+    list-style: none;
+    width: 100%;
+    text-align: center;
+    align-items: center;
+    white-space: nowrap;
+    border: .2em solid rgba(255, 255, 255, 0);
+    transition: 400ms;
+}
+
+.nav-item:hover {
+    border-bottom: .2em solid rgb(100, 149, 237);
+}
+
+.nav-item a {
+    font-family: arial;
+    line-height: 2em;
+    width: 100%;
+    font-size: 1.2em;
+    color: black;
+}
+
+#accBtn {
+    border-style: solid;
+}
+
+a:visited {
+    color: inherit;
+}
+
+#shopping_cart {
+    display: flex;
+    align-items: start;
+    justify-content: center;
+    justify-items: center;
+    background-image: url("../pictures/shopping_cart.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center center;
+}
+
+#shopping_cart:hover {
+    background-color: rgb(100, 149, 237);
+}
+
+#shopping_cart a {
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    justify-items: center;
+    align-items: center;
+    margin-top: .7em;
+}
+
+#shopping_cart:hover a {
+    margin: 0;
+}
+
+#shopping_cart #cartCheckout {
+    transition: 400ms;
+    display: none;
+    opacity: 0;
+}
+
+#shopping_cart:hover #cartCheckout {
+    display: block;
+    opacity: 1;
+}
+
+#cartCount {
+    color: rgb(205, 50, 172);
+    /* background-color: rgba(255, 255, 255, .5); */
+    line-height: 0;
+    font-weight: 700;
+}
+
+#shopping_cart:hover #cartCount {
+    display: none;
+}
+
+#checkLabel {
+    display: none;
+}
+
+label {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.menu {
+    display: none;
+    background-color: black;
+    width: 1.8em;
+    height: .2em;
+    margin-bottom: .4em;
+}
+
+#orderItems {
+    margin-bottom: 1em;
+    float: right;
+    font-size: 1em;
+    padding: .3em;
+    border: none;
+    background-color: rgba(255, 255, 77, .7);
+    margin-left: 1em;
+}
+
+#orderItems option {
+    background-color: rgba(255, 255, 77, .7);
+    padding: .5em;
+}
+
+.products {
+    display: grid;
+    gap: 2em;
+    grid-template-columns: repeat(3, 1fr);
+    justify-items: center;
+    clear: both;
+}
+
+.productInfo {
+    position: relative;
+    width: 100%;
+    height: 30em;
+    display: flex;
+    align-items: end;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.productInfo img {
+    transition: 100ms;
+    position: absolute;
+    z-index: -10;
+}
+
+.priceBuy {
+    opacity: 0;
+    transition: 100ms;
+    z-index: 20;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.priceTag {
+    background-color: rgba(255, 255, 77, .7);
+    padding: .5em;
+    margin: 0 0 .5em 0;
+}
+
+.priceTag:hover {
+    cursor: default;
+}
+
+.buyBtn {
+    background-color: rgba(26, 83, 255, .8);
+    border: none;
+    font-size: 1.2em;
+    font-weight: 300;
+    color: white;
+    padding: .6em 1.2em;
+    margin: 0;
+    transition: 200ms;
+    border-radius: 5%;
+}
+
+.buyBtn:hover {
+    background-color: rgb(26, 83, 255);
+    cursor: pointer;
+}
+
+.disabledBuyBtn {
+    background-color: rgb(158, 158, 158);
+    border: none;
+    font-size: 1.2em;
+    font-weight: 300;
+    color: white;
+    padding: .6em 1.2em;
+    margin: 0;
+    transition: 200ms;
+    border-radius: 5%;
+}
+
+.disabledBuyBtn:hover {
+    cursor: default;
+    background-color: rgb(158, 158, 158);
+}
+
+footer {
+    background-color: rgb(100, 149, 237);
+    color: rgb(245, 245, 245);
+    bottom: 0.2em;
+    text-align: center;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    padding: 1em 2em;
+    margin-top: .3em;
+    align-items: center;
+}
+
+#footerContacts * {
+    display: block;
+    line-height: 2em;
+    text-align: start;
+}
+
+#footerSocialMedia * {
+    font-size: 1.4em;
+    margin: 0 1em;
+}
+
+@media screen and (max-width : 760px) {
+    nav {
+        display: flex;
+        justify-content: center;
+    }
+
+    .nav-list {
+        display: none;
+    }
+
+    .menu {
+        display: inline-block;
+    }
+
+    #checkLabel:checked ~ .nav-list {
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        top: 2.5em;
+        width: 80%;
+        margin: 0;
+        padding: 0;
+        background-color: rgba(164, 191, 219, 0.8);
+    }
+
+    #checkLabel:checked ~ label .menu:nth-child(1) {
+        transform: rotate(45deg);
+        margin: -.2em;
+        transition: 400ms;
+    }
+
+    #checkLabel:checked ~ label .menu:nth-child(2) {
+        display: none;
+        transition: 400ms;
+    }
+
+    #checkLabel:checked ~ label .menu:nth-child(3) {
+        transform: rotate(-45deg);
+        margin: 0;
+        transition: 400ms;
+    }
+
+    .nav-item {
+        font-size: 1.2rem;
+        border: none;
+        z-index: 21;
+    }
+
+    .nav-item:hover {
+        background-color: rgb(100, 149, 237);
+        border: none;
+    }
+
+    #shopping_cart a {
+        display: block;
+        margin-top: 0;
+    }
+
+    #cartCount {
+        position: relative;
+        bottom: .3em;
+    }
+
+    #accBtn {
+        border-style: none;
+    }
+
+    .products {
+        display: grid;
+        grid-template-columns: 1fr;
+    }
+}
