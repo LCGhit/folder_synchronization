@@ -17,7 +17,7 @@ def getLogs(message, logFile):
     logger.info(message)
 
 
-# adds whatever new files/folders to backup folder
+# adds any new files/folders to backup folder
 def synchAndCreate(source, replica, logFile):
     for file in pathlib.Path(source).iterdir():
         targetPath = replica+"/"+os.path.basename(file)
@@ -37,7 +37,7 @@ def synchAndCreate(source, replica, logFile):
                 getLogs("File at {0} copied to {1}".format(sourceFile,targetFile), logFile)
 
 
-# deletes whatever new files/folders to backup folder
+# deletes any files/folders no longer in source folder
 def synchAndDestroy(source, replica, logFile):
     for file in pathlib.Path(replica).iterdir():
         sourcePath = source+"/"+os.path.basename(file)
