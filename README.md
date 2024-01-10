@@ -20,7 +20,7 @@ To use the script you need only call the file with four arguments:
 3) the file that logs the changes (creates file if none exists)
 4) the interval for the iteration of the script - the default unit of time is seconds, but with the flag -u it may be read as minutes (-um), hours (-uh), or days (-ud)
 
-For instance, calling the script from the linux command line: $ python3 synch_folders.py source/ replica/ log.log 30 -u<b>m</b>
+For instance, calling the script from the linux command line: $ python3 synch_folders.py /path/to/sourceFolder/ /path/to/replicaFolder/ logFile.log 30 -u<b>m</b>
 This will synch the replica folder with the source folder every 30 <b>m</b>inutes
 
 See the [open issues](https://github.com/LCGhit/folder_synchronization/issues) for a full list of proposed features (and known issues).
