@@ -1,7 +1,7 @@
 <!-- ABOUT -->
 ## About
 
-A simple python script to make a periodic backup of a given folder, avoiding recourse to the shutil module simply for practice purposes.
+A simple python script to make a periodic backup of a given folder. For practice purposes, the shutil module was avoided.
 
 
 <!-- GETTING STARTED -->
@@ -16,8 +16,8 @@ You may simply download the synch_folders.py file or clone the repo and follow t
 
 To use the script you need only call the file with four arguments:
 1) the path to the folder you wish to backup
-2) the path to the backup folder (if no folder with provided name exists, one will de created)
-3) the file that logs the changes (if no file with provided name exists, one will de created)
+2) the path to the backup folder (creates folder if none exists)
+3) the file that logs the changes (creates file if none exists)
 4) the interval for the iteration of the script - the default unit of time is seconds, but with the flag -u it may be read as minutes (-um), hours (-uh), or days (-ud)
 
 See the [open issues](https://github.com/LCGhit/folder_synchronization/issues) for a full list of proposed features (and known issues).
@@ -30,7 +30,7 @@ See the [open issues](https://github.com/LCGhit/folder_synchronization/issues) f
 ## Contributing
 
 If you have a suggestion that would make this better, please fork the repo and create a pull request. You can also simply open an issue with the tag "enhancement".
-Don't forget to give the project a star! Thanks again!
+Thank you!
 
 1. Fork the Project
 2. Create your Feature Branch (`git checkout -b feature/AmazingFeature`)
